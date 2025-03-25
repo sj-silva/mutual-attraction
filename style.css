@@ -14,37 +14,76 @@ body {
 }
 
 header {
-  background-color: #4a90e2; /* Bright blue header background */
-  padding: 20px;
+  background-color: #4a90e2;
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  margin-bottom: 30px; /* Space between header and canvas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 90%; /* Make header width responsive */
+  max-width: 600px; /* Limit maximum width */
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: white;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 600;
+  margin: 0;
 }
 
 canvas {
   display: block;
-  border: 2px solid #ddd; /* Light border for canvas */
+  border: 2px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  background-color: #ffffff; /* Canvas background to contrast with body */
-  transition: border-color 0.3s ease; /* Smooth border color change on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+  width: 95%; /* Responsive width */
+  max-width: 800px; /* Maximum width */
+  height: auto; /* Maintain aspect ratio */
 }
 
 canvas:hover {
-  border-color: #4a90e2; /* Change border to match header color on hover */
+  border-color: #4a90e2;
 }
 
-/* Responsive Styles */
+/* Mobile-specific adjustments */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem; /* Slightly smaller font size on smaller screens */
+  body {
+    padding: 10px;
   }
+
+  header {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  canvas {
+    width: 100%;
+    max-width: 100%;
+    border-width: 1px;
+  }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  header {
+    padding: 8px;
+  }
+}
+
+/* Ensure full responsiveness and prevent horizontal scroll */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
