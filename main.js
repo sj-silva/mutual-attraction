@@ -2,7 +2,11 @@ let balls = [];
 let sun;
 
 function setup() {
-  createCanvas(800, 600);
+  // Use windowWidth and windowHeight to create a responsive canvas
+  const canvasWidth = min(720, windowWidth * 0.95);
+  const canvasHeight = min(540, windowHeight * 0.7);
+
+  createCanvas(canvasWidth, canvasHeight);
 
   const maxAttempts = 100; // Prevent infinite loop
   const minDistance = 80; // Minimum distance between ball centers
@@ -41,6 +45,13 @@ function setup() {
   if (balls.length < totalBalls) {
     console.warn(`Could only place ${balls.length} out of ${totalBalls} balls`);
   }
+}
+
+// Add a function to handle window resizing
+function windowResized() {
+  const canvasWidth = min(800, windowWidth * 0.95);
+  const canvasHeight = min(600, windowHeight * 0.7);
+  resizeCanvas(canvasWidth, canvasHeight);
 }
 
 function draw() {
