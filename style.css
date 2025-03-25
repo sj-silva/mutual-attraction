@@ -20,6 +20,7 @@ header {
   margin-bottom: 20px;
   width: 90%;
   max-width: 600px;
+  text-align: center; /* Add this line to center the text */
 }
 
 h1 {
@@ -29,6 +30,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 600;
   margin: 0;
+  display: inline-block; /* Optional: ensures the text is centered even if it doesn't fill the full width */
 }
 
 main {

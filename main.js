@@ -12,7 +12,6 @@ function setup() {
   const minDistance = 80; // Minimum distance between ball centers
   const totalBalls = 10;
   sun = new Ball(width / 2, height / 2, 0, 0, { mass: 10, radius: 50 });
-  sun.mass = 50;
 
   let attempts = 0;
   while (balls.length < totalBalls && attempts < maxAttempts) {
